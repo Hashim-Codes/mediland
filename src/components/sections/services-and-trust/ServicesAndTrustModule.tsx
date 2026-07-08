@@ -86,32 +86,44 @@ export function ServicesAndTrustModule() {
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            {servicesContent.items.map((service) => (
+            {servicesContent.items.map((service, idx) => (
               <motion.div 
                 key={service.id}
                 variants={fadeUp}
-                className="group relative bg-white rounded-[20px] p-6 shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-300 flex flex-col h-full"
-                style={{ '--hover-border-color': primaryColor } as React.CSSProperties}
+                className="group relative rounded-[24px] p-6 shadow-lg border border-gray-100/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full min-h-[340px] overflow-hidden"
               >
-                {/* Dynamic hover border */}
-                <div className="absolute inset-0 rounded-[20px] border-2 border-transparent group-hover:border-[var(--hover-border-color)] transition-colors duration-300 pointer-events-none" />
-                
-                <div 
-                  className="w-14 h-14 rounded-full flex items-center justify-center mb-6 shrink-0 transition-transform duration-300 group-hover:scale-110"
-                  style={{ backgroundColor: `${primaryColor}15`, color: primaryColor }}
-                >
-                  <IconResolver name={service.iconName} className="w-6 h-6" />
+                {/* Background Image */}
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src={`/gallery/${(idx % 8) + 1}.jpg`}
+                    alt={service.title}
+                    fill
+                    className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  {/* Premium Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-gray-900/20 group-hover:from-black group-hover:via-black/70 group-hover:to-black/40 transition-colors duration-500" />
                 </div>
                 
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-sm text-gray-600 font-medium leading-relaxed flex-grow">{service.description}</p>
-                
-                <div 
-                  className="mt-6 flex items-center gap-2 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ color: primaryColor }}
-                >
-                  Learn More
-                  <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+                {/* Content */}
+                <div className="relative z-10 flex flex-col h-full">
+                  <div 
+                    className="w-14 h-14 rounded-[16px] flex items-center justify-center mb-auto shrink-0 transition-transform duration-500 group-hover:scale-110 bg-white/10 backdrop-blur-md border border-white/20 shadow-xl"
+                  >
+                    <IconResolver name={service.iconName} className="w-7 h-7 text-white" />
+                  </div>
+                  
+                  <div className="mt-8 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h3 className="text-xl font-bold text-white mb-2 tracking-wide">{service.title}</h3>
+                    <p className="text-sm text-gray-300 font-medium leading-relaxed line-clamp-3">{service.description}</p>
+                    
+                    <div 
+                      className="mt-6 flex items-center gap-2 text-sm font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 text-white"
+                    >
+                      Learn More
+                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
