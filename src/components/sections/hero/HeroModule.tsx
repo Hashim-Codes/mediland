@@ -22,7 +22,7 @@ export function HeroModule() {
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-4 lg:px-8 max-w-[1400px] relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-20">
           
           {/* Left Side: Text Content */}
           <motion.div 
@@ -60,7 +60,7 @@ export function HeroModule() {
             </motion.p>
 
             {/* Call to Actions */}
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-16 lg:mb-0">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <button 
                 className="px-8 py-4 rounded-[16px] text-white font-bold text-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-red-500/20"
                 style={{ backgroundColor: primaryColor }}
