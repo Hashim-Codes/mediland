@@ -67,10 +67,10 @@ export function PremiumFooterModule() {
                 <p className="text-gray-300 leading-relaxed mb-8 font-light max-w-md">
                   {footer.anniversary.message}
                 </p>
-                <button className="inline-flex items-center text-yellow-400 font-bold hover:text-yellow-300 transition-colors w-fit group/btn">
+                <a href="#about" className="inline-flex items-center text-yellow-400 font-bold hover:text-yellow-300 transition-colors w-fit group/btn">
                   {footer.anniversary.ctaLabel}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                </button>
+                </a>
               </div>
             </motion.div>
 
@@ -101,10 +101,10 @@ export function PremiumFooterModule() {
               <motion.p variants={slideLeft} className="text-lg text-gray-600 mb-10 leading-relaxed font-light">
                 {footer.gallery.description}
               </motion.p>
-              <motion.button variants={slideLeft} className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 bg-white border-2 border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300">
+              <a href="#facilities" className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 bg-white border-2 border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300">
                 {footer.gallery.ctaLabel}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+              </a>
             </motion.div>
 
             <motion.div 

@@ -117,12 +117,13 @@ export function ServicesAndTrustModule() {
                     <h3 className="text-xl font-bold text-white mb-2 tracking-wide">{service.title}</h3>
                     <p className="text-sm text-gray-300 font-medium leading-relaxed line-clamp-3">{service.description}</p>
                     
-                    <div 
+                    <a 
+                      href="#appointment"
                       className="mt-6 flex items-center gap-2 text-sm font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 text-white"
                     >
                       Learn More
                       <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
-                    </div>
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -169,14 +170,15 @@ export function ServicesAndTrustModule() {
               ))}
             </div>
             
-            <motion.button 
+            <motion.a 
+              href="#appointment"
               variants={fadeUp}
-              className="px-8 py-4 rounded-[14px] font-bold text-lg border-2 transition-all duration-300 flex items-center justify-center gap-2 group hover:shadow-lg"
+              className="px-8 py-4 rounded-[14px] font-bold text-lg border-2 transition-all duration-300 inline-flex items-center justify-center gap-2 group hover:shadow-lg mt-8"
               style={{ borderColor: primaryColor, color: primaryColor } as React.CSSProperties}
             >
               {whyChoose.ctaLabel}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           {/* Center Column: Image (Col Span 5) */}

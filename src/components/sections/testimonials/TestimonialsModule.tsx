@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Clock, Calendar, MessageSquare, Quote, Star } from 'lucide-react';
+import { Clock, Calendar, MessageCircle, Quote, Star, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 import { Carousel } from '@/components/ui/Carousel';
 import { Testimonial } from '@/types';
@@ -141,16 +141,15 @@ export function TestimonialsModule() {
             </p>
             
             <div className="w-full space-y-4">
-              <button className="w-full flex items-center justify-center py-4 px-6 rounded-xl bg-primary text-white font-bold hover:bg-red-600 transition-colors shadow-[0_8px_20px_rgb(229,57,53,0.3)] hover:-translate-y-1 group">
-                <Calendar className="w-5 h-5 mr-2" />
-                Book Appointment
-                <span className="ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
-              </button>
+              <a href="#appointment" className="w-full flex items-center justify-center py-4 px-6 rounded-xl bg-primary text-white font-bold hover:bg-red-600 transition-colors shadow-[0_8px_20px_rgb(229,57,53,0.3)] hover:-translate-y-1 group">
+                Book Your Consultation
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
               
-              <button className="w-full flex items-center justify-center py-4 px-6 rounded-xl bg-white text-gray-900 font-bold border-2 border-gray-200 hover:bg-[#25D366]/5 hover:border-[#25D366] transition-all group">
-                <MessageSquare className="w-5 h-5 mr-2 text-[#25D366]" />
+              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center py-4 px-6 rounded-xl bg-white text-gray-900 font-bold border-2 border-gray-200 hover:bg-[#25D366]/5 hover:border-[#25D366] transition-all group">
+                <MessageCircle className="w-5 h-5 mr-2 text-[#25D366]" />
                 Chat on WhatsApp
-              </button>
+              </a>
             </div>
           </motion.div>
         </motion.div>

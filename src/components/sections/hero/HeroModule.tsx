@@ -61,19 +61,21 @@ export function HeroModule() {
 
             {/* Call to Actions */}
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <button 
+              <a 
+                href="#appointment"
                 className="px-8 py-4 rounded-[16px] text-white font-bold text-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-red-500/20"
                 style={{ backgroundColor: primaryColor }}
               >
                 <Calendar className="w-5 h-5" />
                 {hero.primaryCtaLabel}
-              </button>
-              <button 
+              </a>
+              <a 
+                href="#doctors"
                 className="px-8 py-4 rounded-[16px] text-[var(--color-secondary)] font-bold text-lg bg-white border border-gray-200 hover:border-[var(--color-primary)] hover:shadow-md transition-all duration-300 flex items-center justify-center gap-2"
               >
                 {hero.secondaryCtaLabel}
                 <ArrowRight className="w-5 h-5" />
-              </button>
+              </a>
             </motion.div>
           </motion.div>
 

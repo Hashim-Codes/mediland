@@ -101,12 +101,12 @@ export function SpecialtiesModule() {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Book Appointment</h3>
               <p className="text-gray-400 mb-8 font-light">Reserve a consultation with our experienced specialists today.</p>
-              <button className="w-full py-4 rounded-xl bg-primary text-white font-bold hover:bg-red-600 transition-colors shadow-lg shadow-primary/20 mb-3">
-                Book Appointment
-              </button>
-              <button className="w-full py-4 rounded-xl bg-white/5 text-white font-bold border border-white/10 hover:bg-white/10 transition-colors">
-                Chat on WhatsApp
-              </button>
+              <a href="#appointment" className="w-full flex items-center justify-center py-4 rounded-xl bg-primary text-white font-bold hover:bg-red-600 transition-colors shadow-lg shadow-primary/20 mb-3">
+                Consult Now
+              </a>
+              <a href="#facilities" className="w-full flex items-center justify-center py-4 rounded-xl bg-white/5 text-white font-bold border border-white/10 hover:bg-white/10 transition-colors">
+                View All Departments
+              </a>
             </div>
 
             {/* Col 2 */}
@@ -180,9 +180,9 @@ export function SpecialtiesModule() {
                   <h4 className="font-bold text-lg text-gray-900">{config.branding.name}</h4>
                   <p className="text-gray-500">{config.contact.address}</p>
                 </div>
-                <button className="w-14 h-14 rounded-full bg-gray-50 hover:bg-primary hover:text-white flex items-center justify-center text-gray-600 transition-colors shadow-sm">
-                  <Map className="w-6 h-6" />
-                </button>
+                <a href="#appointment" className="w-14 h-14 rounded-full bg-gray-50 hover:bg-primary hover:text-white flex items-center justify-center text-gray-600 transition-colors shadow-sm">
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </div>
             </div>
           </motion.div>
