@@ -90,7 +90,7 @@ export function ServicesAndTrustModule() {
               <motion.div 
                 key={service.id}
                 variants={fadeUp}
-                className="group relative rounded-[24px] p-6 shadow-sm hover:shadow-xl border border-gray-100 bg-white hover:-translate-y-2 transition-all duration-500 flex flex-col h-full min-h-[320px] overflow-hidden"
+                className="group relative rounded-[24px] p-6 shadow-sm hover:shadow-xl border border-gray-100 bg-white hover:-translate-y-2 transition-all duration-500 flex flex-col h-full min-h-[240px] overflow-hidden"
               >
                 {/* Content */}
                 <div className="relative z-10 flex flex-col h-full">
