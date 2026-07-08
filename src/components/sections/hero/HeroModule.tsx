@@ -16,7 +16,7 @@ export function HeroModule() {
   const primaryColor = branding.primaryColor || "#D62828";
 
   return (
-    <section className="relative min-h-[95vh] bg-[var(--color-background)] overflow-hidden flex items-center pt-28 pb-20">
+    <section className="relative min-h-[100dvh] lg:min-h-[95vh] bg-[var(--color-background)] overflow-hidden flex items-center pt-28 pb-20">
       {/* Premium subtle background glow */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-red-500/5 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-[120px] pointer-events-none" />
@@ -28,7 +28,8 @@ export function HeroModule() {
           <motion.div 
             className="w-full lg:w-1/2 flex flex-col items-start"
             initial="initial"
-            animate="animate"
+            whileInView="animate"
+            viewport={{ once: true, margin: "50px" }}
             variants={staggerContainer}
           >
             {/* Trust Badge */}
@@ -87,7 +88,8 @@ export function HeroModule() {
             <motion.div 
               className="relative w-full max-w-[600px] mx-auto"
               initial={{ opacity: 0, scale: 0.95, x: 20 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
+              whileInView={{ opacity: 1, scale: 1, x: 0 }}
+              viewport={{ once: true, margin: "50px" }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               {/* Premium Glass Frame */}
@@ -97,6 +99,7 @@ export function HeroModule() {
                   <img 
                     src={hero.heroImage}
                     alt={`${branding.name} Building`}
+                    fetchPriority="high"
                     className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-1000 block"
                   />
                   {/* Subtle vignette for contrast */}
@@ -109,7 +112,8 @@ export function HeroModule() {
                 className="absolute -top-4 -right-2 md:-top-10 md:-right-4 lg:-right-10 z-20 animate-float"
                 variants={fadeUp}
                 initial="initial"
-                animate="animate"
+                whileInView="animate"
+                viewport={{ once: true, margin: "50px" }}
                 transition={{ delay: 0.6 }}
               >
                 <div className="relative w-24 h-24 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full flex items-center justify-center shadow-2xl shadow-amber-500/30 overflow-hidden bg-white border-[3px] md:border-[4px] border-white group">
@@ -140,7 +144,8 @@ export function HeroModule() {
                 className="absolute -bottom-8 md:-bottom-12 left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:-bottom-8 lg:-left-12 z-20 bg-white/20 border border-white/40 text-gray-900 rounded-[20px] p-3 sm:p-5 lg:p-6 shadow-2xl shadow-black/10 w-[95%] sm:w-max max-w-[600px] backdrop-blur-xl flex flex-row items-center justify-between sm:justify-start gap-2 sm:gap-6"
                 variants={slideLeft}
                 initial="initial"
-                animate="animate"
+                whileInView="animate"
+                viewport={{ once: true, margin: "50px" }}
                 transition={{ delay: 0.8 }}
               >
                 <div className="flex items-center gap-2 sm:gap-4 flex-1 justify-center sm:justify-start">
@@ -173,7 +178,8 @@ export function HeroModule() {
         <motion.div 
           className="mt-32 lg:mt-32 w-full bg-white rounded-[24px] shadow-sm border border-gray-100 p-6 lg:p-8"
           initial="initial"
-          animate="animate"
+          whileInView="animate"
+          viewport={{ once: true, margin: "50px" }}
           variants={fadeUp}
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
