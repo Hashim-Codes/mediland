@@ -135,29 +135,29 @@ export function HeroModule() {
 
               {/* Bottom Floating Card (Emergency/Hours) */}
               <motion.div 
-                className="absolute -bottom-16 left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:-bottom-8 lg:-left-12 z-20 bg-[var(--color-secondary)]/75 border border-white/10 text-white rounded-[24px] p-5 lg:p-6 shadow-2xl shadow-black/20 w-[90%] max-w-[320px] backdrop-blur-xl"
+                className="absolute -bottom-16 left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:-bottom-8 lg:-left-12 z-20 bg-white/20 border border-white/40 text-gray-900 rounded-[24px] p-5 lg:p-6 shadow-2xl shadow-black/10 w-[90%] max-w-[320px] backdrop-blur-xl"
                 variants={slideLeft}
                 initial="initial"
                 animate="animate"
                 transition={{ delay: 0.8 }}
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
-                    <Clock className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-full bg-white/40 flex items-center justify-center shrink-0 border border-white/60">
+                    <Clock className="w-6 h-6 text-[var(--color-secondary)]" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-wider text-blue-200">{hero.infoBar.opdDays}</div>
-                    <div className="text-sm font-bold">{hero.infoBar.opdTimings}</div>
+                    <div className="text-xs font-bold uppercase tracking-wider text-[var(--color-primary)]">{hero.infoBar.opdDays}</div>
+                    <div className="text-sm font-bold text-gray-900">{hero.infoBar.opdTimings}</div>
                   </div>
                 </div>
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-4" />
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-4" />
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 shadow-lg shadow-red-500/30 border border-white/20" style={{ backgroundColor: primaryColor }}>
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 shadow-lg shadow-red-500/30 border border-white/50" style={{ backgroundColor: primaryColor }}>
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-wider text-blue-200">{hero.infoBar.emergencyText}</div>
-                    <div className="text-sm font-bold tracking-wide">{hero.infoBar.emergencyContact}</div>
+                    <div className="text-xs font-bold uppercase tracking-wider text-[var(--color-primary)]">{hero.infoBar.emergencyText}</div>
+                    <div className="text-sm font-bold tracking-wide text-gray-900">{hero.infoBar.emergencyContact}</div>
                   </div>
                 </div>
               </motion.div>
