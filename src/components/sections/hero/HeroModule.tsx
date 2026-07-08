@@ -135,7 +135,7 @@ export function HeroModule() {
 
               {/* Bottom Floating Card (Emergency/Hours) */}
               <motion.div 
-                className="absolute -bottom-16 left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:-bottom-8 lg:-left-12 z-20 bg-white/20 border border-white/40 text-gray-900 rounded-[24px] p-5 lg:p-6 shadow-2xl shadow-black/10 w-[90%] max-w-[320px] backdrop-blur-xl"
+                className="absolute -bottom-24 left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:-bottom-8 lg:-left-12 z-20 bg-white/20 border border-white/40 text-gray-900 rounded-[24px] p-5 lg:p-6 shadow-2xl shadow-black/10 w-[90%] max-w-[320px] backdrop-blur-xl"
                 variants={slideLeft}
                 initial="initial"
                 animate="animate"
@@ -167,7 +167,7 @@ export function HeroModule() {
 
         {/* Bottom Feature Bar */}
         <motion.div 
-          className="mt-24 lg:mt-32 w-full bg-white rounded-[24px] shadow-sm border border-gray-100 p-6 lg:p-8"
+          className="mt-32 lg:mt-32 w-full bg-white rounded-[24px] shadow-sm border border-gray-100 p-6 lg:p-8"
           initial="initial"
           animate="animate"
           variants={fadeUp}
