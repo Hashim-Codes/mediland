@@ -1,0 +1,61 @@
+
+> web@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.20
+   - Environments: .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 3.3s
+   Linting and checking validity of types ...
+
+./src/templates/clinic/modules/footer/PremiumFooterModule.tsx
+124:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/templates/clinic/modules/hero/HeroModule.tsx
+95:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/templates/clinic/modules/MedicineOrderModule.tsx
+81:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/20) ...
+   Generating static pages (5/20) 
+   Generating static pages (10/20) 
+   Generating static pages (15/20) 
+ ✓ Generating static pages (20/20)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    18.3 kB         174 kB
+├ ○ /_not-found                            986 B         104 kB
+├ ƒ /[domain]/[[...slug]]                  757 B         103 kB
+├ ○ /about                                 176 B         111 kB
+├ ƒ /api/admission                         140 B         103 kB
+├ ƒ /api/leads                             140 B         103 kB
+├ ○ /apply                               6.89 kB         150 kB
+├ ○ /apply/thank-you                       168 B         106 kB
+├ ○ /clinic                                26 kB         181 kB
+├ ○ /contact                               140 B         103 kB
+├ ○ /courses                               168 B         106 kB
+├ ƒ /draft-preview                         757 B         103 kB
+├ ○ /faculty                               487 B         108 kB
+├ ○ /faq                                   168 B         106 kB
+├ ○ /gallery                               176 B         111 kB
+├ ○ /results                               176 B         111 kB
+├ ○ /robots.txt                            140 B         103 kB
+├ ○ /sitemap.xml                           140 B         103 kB
+└ ○ /testimonials                          487 B         108 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/18-7be73bec2ceaa744.js        46.3 kB
+  ├ chunks/87c73c54-24122e7b92478d00.js  54.2 kB
+  └ other shared chunks (total)          2.01 kB
+
+
+ƒ Middleware                             34.5 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

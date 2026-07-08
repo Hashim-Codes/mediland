@@ -1,0 +1,49 @@
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico, sitemap.xml, robots.txt (static files)
+     */
+    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
+  ],
+};
+
+export function middleware(req: NextRequest) {
+  const url = req.nextUrl;
+  
+  // Get hostname of request (e.g. demo.businessos.com, demo.localhost:3000)
+  const host = req.headers.get('host');
+  if (!host) {
+    return NextResponse.next();
+  }
+  
+  const hostname = host.replace('.localhost:3000', `.${process.env.NEXT_PUBLIC_ROOT_DOMAIN || 'businessos.local'}`);
+
+  const searchParams = req.nextUrl.searchParams.toString();
+  const path = `${url.pathname}${
+    searchParams.length > 0 ? `?${searchParams}` : ''
+  }`;
+
+  // If we are on the root domain (e.g. businessos.local), we just serve the main marketing site
+  if (
+    hostname === 'localhost:3000' ||
+    hostname === '127.0.0.1:3000' ||
+    hostname === process.env.NEXT_PUBLIC_ROOT_DOMAIN ||
+    hostname === 'businessos.local'
+  ) {
+    // Optionally rewrite to a /home or /marketing directory if your app router is organized that way
+    // For now, let it hit the root app/page.tsx
+    return NextResponse.next();
+  }
+
+  // Rewrite to the tenant-specific path
+  // E.g. demo.businessos.local/about -> /demo.businessos.local/about
+  return NextResponse.rewrite(new URL(`/${hostname}${path}`, req.url));
+}
+

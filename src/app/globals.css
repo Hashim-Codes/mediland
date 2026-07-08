@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+
+@theme inline {
+  /* Dynamic Tenant Colors (Premium Healthcare Theme) */
+  --color-primary: var(--theme-primary, #D62828); /* Medical Red */
+  --color-secondary: var(--theme-secondary, #0B2E4F); /* Medical Navy */
+  --color-accent: var(--theme-accent, #159895); /* Medical Teal */
+  --color-dark: var(--theme-dark, #111827); /* Text Primary */
+  --color-surface: var(--theme-surface, #FFFFFF); /* Cards */
+  --color-background: var(--theme-background, #F8FAFC); /* Background */
+  --color-glow: var(--theme-glow, rgba(214, 40, 40, 0.15)); /* Red glow */
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  
+  --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes infinite-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .7; transform: scale(1.05); }
+}
+
+@layer base {
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-dark);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+
+
