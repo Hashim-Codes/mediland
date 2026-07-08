@@ -11,7 +11,7 @@ import { fadeUp, slideRight, staggerContainer, scaleIn } from '@/lib/animations'
 function Counter({ from, to }: { from: number; to: number }) {
   const [count, setCount] = useState(from);
   const nodeRef = React.useRef(null);
-  const isInView = useInView(nodeRef, { once: true, margin: "-100px" });
+  const isInView = useInView(nodeRef, { once: true, margin: "0px" });
 
   useEffect(() => {
     if (isInView) {
