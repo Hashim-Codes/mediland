@@ -104,29 +104,29 @@ export function HeroModule() {
               
               {/* Premium Anniversary Badge */}
               <motion.div 
-                className="absolute -top-10 -right-4 lg:-right-10 z-20 animate-float"
+                className="absolute -top-4 -right-2 md:-top-10 md:-right-4 lg:-right-10 z-20 animate-float"
                 variants={fadeUp}
                 initial="initial"
                 animate="animate"
                 transition={{ delay: 0.6 }}
               >
-                <div className="relative w-36 h-36 md:w-40 md:h-40 rounded-full flex items-center justify-center shadow-2xl shadow-amber-500/30 overflow-hidden bg-white border-[4px] border-white group">
+                <div className="relative w-24 h-24 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full flex items-center justify-center shadow-2xl shadow-amber-500/30 overflow-hidden bg-white border-[3px] md:border-[4px] border-white group">
                   <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-amber-600" />
                   
                   {/* Decorative dashed circle */}
-                  <div className="absolute inset-2 border border-dashed border-white/60 rounded-full group-hover:rotate-180 transition-transform duration-[3000ms] ease-in-out" />
+                  <div className="absolute inset-1.5 md:inset-2 border border-dashed border-white/60 rounded-full group-hover:rotate-180 transition-transform duration-[3000ms] ease-in-out" />
 
                   <div className="relative z-10 flex flex-col items-center justify-center text-center text-white drop-shadow-md">
-                    <span className="text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase opacity-95 mb-0.5">
+                    <span className="text-[6px] md:text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase opacity-95 mb-0.5">
                       Celebrating
                     </span>
                     <div className="flex items-start drop-shadow-lg">
-                      <span className="text-4xl md:text-5xl font-black font-heading leading-none">
+                      <span className="text-2xl md:text-4xl lg:text-5xl font-black font-heading leading-none">
                         {hero.anniversaryBadge.years}
                       </span>
-                      <span className="text-lg md:text-xl font-bold ml-0.5 leading-none">nd</span>
+                      <span className="text-xs md:text-lg lg:text-xl font-bold ml-0.5 leading-none">nd</span>
                     </div>
-                    <span className="text-[9px] md:text-[10px] font-bold tracking-[0.1em] uppercase mt-1 opacity-95">
+                    <span className="text-[6px] md:text-[9px] lg:text-[10px] font-bold tracking-[0.1em] uppercase mt-0.5 md:mt-1 opacity-95">
                       Year of Trust
                     </span>
                   </div>
@@ -135,7 +135,7 @@ export function HeroModule() {
 
               {/* Bottom Left Floating Card (Emergency/Hours) */}
               <motion.div 
-                className="absolute -bottom-8 -left-4 lg:-left-12 z-20 bg-[var(--color-secondary)] text-white rounded-[24px] p-6 shadow-2xl shadow-[var(--color-secondary)]/30 w-[280px] sm:w-[320px] backdrop-blur-md"
+                className="relative mt-6 mx-auto lg:absolute lg:mt-0 lg:-bottom-8 lg:-left-12 z-20 bg-[var(--color-secondary)] text-white rounded-[24px] p-5 lg:p-6 shadow-2xl shadow-[var(--color-secondary)]/30 w-full max-w-[320px] backdrop-blur-md"
                 variants={slideLeft}
                 initial="initial"
                 animate="animate"
