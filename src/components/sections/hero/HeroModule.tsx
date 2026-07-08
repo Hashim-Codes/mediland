@@ -133,9 +133,9 @@ export function HeroModule() {
                 </div>
               </motion.div>
 
-              {/* Bottom Left Floating Card (Emergency/Hours) */}
+              {/* Bottom Floating Card (Emergency/Hours) */}
               <motion.div 
-                className="absolute -bottom-16 left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:-bottom-8 lg:-left-12 z-20 bg-[var(--color-secondary)] text-white rounded-[24px] p-5 lg:p-6 shadow-2xl shadow-[var(--color-secondary)]/30 w-[90%] max-w-[320px] backdrop-blur-md"
+                className="absolute -bottom-16 left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:-bottom-8 lg:-left-12 z-20 bg-[var(--color-secondary)]/75 border border-white/10 text-white rounded-[24px] p-5 lg:p-6 shadow-2xl shadow-black/20 w-[90%] max-w-[320px] backdrop-blur-xl"
                 variants={slideLeft}
                 initial="initial"
                 animate="animate"
