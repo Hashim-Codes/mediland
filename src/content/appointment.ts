@@ -31,7 +31,7 @@ export const appointmentContent: FormConfig = {
       id: "phoneNumber",
       type: "tel",
       label: "Mobile Number",
-      placeholder: "e.g. +91 98765 43210",
+      placeholder: "e.g. +91 94472 29973",
       required: true,
       width: "half"
     },

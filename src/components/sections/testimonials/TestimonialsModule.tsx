@@ -146,7 +146,7 @@ export function TestimonialsModule() {
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
               
-              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center py-4 px-6 rounded-xl bg-white text-gray-900 font-bold border-2 border-gray-200 hover:bg-[#25D366]/5 hover:border-[#25D366] transition-all group">
+              <a href="https://wa.me/919447229973" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center py-4 px-6 rounded-xl bg-white text-gray-900 font-bold border-2 border-gray-200 hover:bg-[#25D366]/5 hover:border-[#25D366] transition-all group">
                 <MessageCircle className="w-5 h-5 mr-2 text-[#25D366]" />
                 Chat on WhatsApp
               </a>
