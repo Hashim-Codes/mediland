@@ -78,7 +78,7 @@ export function HeroModule() {
           </motion.div>
 
           {/* Right Side: Image & Floating Cards */}
-          <div className="w-full lg:w-1/2 relative mt-16 lg:mt-0">
+          <div className="w-full lg:w-1/2 relative lg:mt-0">
             {/* Soft backdrop glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[var(--color-primary)]/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 
