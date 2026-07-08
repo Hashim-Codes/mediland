@@ -90,36 +90,23 @@ export function ServicesAndTrustModule() {
               <motion.div 
                 key={service.id}
                 variants={fadeUp}
-                className="group relative rounded-[24px] p-6 shadow-lg border border-gray-100/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full min-h-[340px] overflow-hidden"
+                className="group relative rounded-[24px] p-6 shadow-sm hover:shadow-xl border border-gray-100 bg-white hover:-translate-y-2 transition-all duration-500 flex flex-col h-full min-h-[320px] overflow-hidden"
               >
-                {/* Background Image */}
-                <div className="absolute inset-0 z-0">
-                  <Image
-                    src={`/gallery/${(idx % 8) + 1}.jpg`}
-                    alt={service.title}
-                    fill
-                    className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  {/* Premium Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-gray-900/20 group-hover:from-black group-hover:via-black/70 group-hover:to-black/40 transition-colors duration-500" />
-                </div>
-                
                 {/* Content */}
                 <div className="relative z-10 flex flex-col h-full">
                   <div 
-                    className="w-14 h-14 rounded-[16px] flex items-center justify-center mb-auto shrink-0 transition-transform duration-500 group-hover:scale-110 bg-white/10 backdrop-blur-md border border-white/20 shadow-xl"
+                    className="w-14 h-14 rounded-[16px] flex items-center justify-center mb-auto shrink-0 transition-transform duration-500 group-hover:scale-110 bg-red-50 text-[var(--color-primary)]"
                   >
-                    <IconResolver name={service.iconName} className="w-7 h-7 text-white" />
+                    <IconResolver name={service.iconName} className="w-7 h-7" />
                   </div>
                   
                   <div className="mt-8 transform transition-transform duration-500 group-hover:-translate-y-2">
-                    <h3 className="text-xl font-bold text-white mb-2 tracking-wide">{service.title}</h3>
-                    <p className="text-sm text-gray-300 font-medium leading-relaxed line-clamp-3">{service.description}</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 tracking-wide group-hover:text-[var(--color-primary)] transition-colors">{service.title}</h3>
+                    <p className="text-sm text-gray-500 font-medium leading-relaxed line-clamp-3">{service.description}</p>
                     
                     <a 
                       href="#appointment"
-                      className="mt-6 flex items-center gap-2 text-sm font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 text-white"
+                      className="mt-6 flex items-center gap-2 text-sm font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 text-[var(--color-primary)]"
                     >
                       Learn More
                       <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
