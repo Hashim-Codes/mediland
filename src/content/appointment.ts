@@ -4,7 +4,7 @@ export const appointmentContent: FormConfig = {
   id: "appointment",
   title: "Book an Appointment",
   subtitle: "Choose your doctor and preferred time. Our team will confirm your appointment shortly.",
-  integration: "whatsapp",
+  integration: "api",
   submitLabel: "Request Appointment",
   successScreen: {
     title: "Appointment Request Received",

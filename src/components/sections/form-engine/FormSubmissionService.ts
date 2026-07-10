@@ -30,7 +30,6 @@ export class FormSubmissionService {
       if (integration === 'whatsapp') {
         return this.submitToWhatsApp(enrichedPayload, formConfig);
       } else if (integration === 'api') {
-        // Dispatch to appropriate service based on form ID
         if (formConfig.id === 'appointment') {
           await AppointmentService.submit(enrichedPayload);
         } else if (formConfig.id === 'medicine-order') {
@@ -40,10 +39,10 @@ export class FormSubmissionService {
         }
         return true;
       }
-      return false;
-    } catch (error) {
+      throw new Error("Invalid integration type");
+    } catch (error: any) {
       console.error("[FormEngine] Submission failed:", error);
-      return false;
+      throw error;
     }
   }
 

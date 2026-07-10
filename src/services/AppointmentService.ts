@@ -7,7 +7,8 @@ export class AppointmentService {
     });
     
     if (!response.ok) {
-      throw new Error('Failed to submit appointment');
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.error || 'Failed to submit appointment');
     }
     
     return response.json();

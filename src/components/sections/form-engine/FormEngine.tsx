@@ -54,17 +54,20 @@ export function FormEngine({ config }: FormEngineProps) {
     return field.options || [];
   };
 
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMsg(null);
     
-    const success = await FormSubmissionService.submit(payload, config);
-    
-    setIsSubmitting(false);
-    if (success) {
+    try {
+      await FormSubmissionService.submit(payload, config);
       setIsSuccess(true);
-    } else {
-      alert("Something went wrong. Please try again.");
+    } catch (err: any) {
+      setErrorMsg(err.message || "An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -80,22 +83,19 @@ export function FormEngine({ config }: FormEngineProps) {
         </div>
         <h3 className="text-3xl font-bold text-gray-900 mb-4">{config.successScreen.title}</h3>
         
-        <div className="bg-gray-50 rounded-2xl p-6 mb-8 text-left">
+        <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 mb-8 text-left">
           <h4 className="font-bold text-gray-900 mb-4">What happens next?</h4>
-          <div className="space-y-4">
+          <div className="grid gap-3">
             {config.successScreen.timeline.map((step, idx) => (
-              <div key={idx} className="flex items-start">
-                <div className="flex flex-col items-center mr-4">
-                  <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${idx === 0 ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-500'}`}>
-                    {idx === 0 ? '✓' : idx + 1}
+              <div key={idx} className={`p-4 rounded-xl flex items-center gap-3 ${idx === 0 ? 'bg-green-50 border border-green-100' : 'bg-white border border-gray-200 shadow-sm'}`}>
+                {idx === 0 ? (
+                  <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
+                ) : (
+                  <div className="w-5 h-5 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center shrink-0 font-bold text-[10px]">
+                    {idx}
                   </div>
-                  {idx < config.successScreen.timeline.length - 1 && (
-                    <div className="w-0.5 h-6 bg-gray-200 my-1" />
-                  )}
-                </div>
-                <div className={`pt-0.5 font-medium ${idx === 0 ? 'text-green-700' : 'text-gray-600'}`}>
-                  {step}
-                </div>
+                )}
+                <span className={`font-medium ${idx === 0 ? 'text-green-800' : 'text-gray-700'}`}>{step}</span>
               </div>
             ))}
           </div>
@@ -239,6 +239,12 @@ export function FormEngine({ config }: FormEngineProps) {
       </div>
 
       <div className="mt-8 pt-8 border-t border-gray-100">
+        {errorMsg && (
+          <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-100 flex items-start">
+            <span className="text-red-500 font-bold mr-2">!</span>
+            <p className="text-red-700 text-sm font-medium">{errorMsg}</p>
+          </div>
+        )}
         <button
           type="submit"
           disabled={isSubmitting}
