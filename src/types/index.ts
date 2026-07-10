@@ -230,7 +230,8 @@ export interface FormFieldConfig {
 
 export interface FormSuccessConfig {
   title: string;
-  timeline: string[];
+  timeline?: string[];
+  message?: string[];
   primaryAction?: { label: string; action: 'call' | 'whatsapp' | 'home' };
   secondaryAction?: { label: string; action: 'call' | 'whatsapp' | 'home' };
   tertiaryAction?: { label: string; action: 'call' | 'whatsapp' | 'home' };

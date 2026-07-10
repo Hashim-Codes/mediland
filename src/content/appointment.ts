@@ -7,16 +7,16 @@ export const appointmentContent: FormConfig = {
   integration: "api",
   submitLabel: "Request Appointment",
   successScreen: {
-    title: "Appointment Request Received",
-    timeline: [
-      "Request Submitted",
-      "Clinic Reviews Request",
-      "Clinic Confirms Appointment",
-      "Visit Clinic"
+    title: "അപ്പോയിന്റ്മെന്റ് ലഭിച്ചു",
+    message: [
+      "നന്ദി!",
+      "നിങ്ങളുടെ അപ്പോയിന്റ്മെന്റ് വിജയകരമായി ലഭിച്ചിട്ടുണ്ട്.",
+      "ഞങ്ങളുടെ ടീം ഉടൻ തന്നെ ഫോൺ വഴിയോ WhatsApp വഴിയോ നിങ്ങളെ ബന്ധപ്പെടുന്നതാണ്.",
+      "അടിയന്തര സഹായം ആവശ്യമാണെങ്കിൽ താഴെയുള്ള ബട്ടണുകൾ ഉപയോഗിച്ച് ഞങ്ങളെ നേരിട്ട് ബന്ധപ്പെടാം."
     ],
-    primaryAction: { label: "Call Clinic", action: "call" },
-    secondaryAction: { label: "WhatsApp Clinic", action: "whatsapp" },
-    tertiaryAction: { label: "Return Home", action: "home" }
+    primaryAction: { label: "ക്ലിനിക്കിലേക്ക് വിളിക്കുക", action: "call" },
+    secondaryAction: { label: "WhatsApp വഴി ബന്ധപ്പെടുക", action: "whatsapp" },
+    tertiaryAction: { label: "ഹോം പേജിലേക്ക് മടങ്ങുക", action: "home" }
   },
   fields: [
     {
