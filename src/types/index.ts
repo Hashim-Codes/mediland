@@ -230,8 +230,7 @@ export interface FormFieldConfig {
 
 export interface FormSuccessConfig {
   title: string;
-  timeline?: string[];
-  message?: string[];
+  timeline: string[];
   primaryAction?: { label: string; action: 'call' | 'whatsapp' | 'home' };
   secondaryAction?: { label: string; action: 'call' | 'whatsapp' | 'home' };
   tertiaryAction?: { label: string; action: 'call' | 'whatsapp' | 'home' };
@@ -244,7 +243,7 @@ export interface FormConfig {
   fields: FormFieldConfig[];
   submitLabel: string;
   successScreen: FormSuccessConfig;
-  integration: 'whatsapp' | 'email' | 'google_sheets' | 'bizonfy_crm';
+  integration: 'whatsapp' | 'email' | 'google_sheets' | 'bizonfy_crm' | 'api';
 }
 
 export interface TenantConfig {

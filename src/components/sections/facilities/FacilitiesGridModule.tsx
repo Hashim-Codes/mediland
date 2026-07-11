@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
@@ -53,7 +54,7 @@ export function FacilitiesGridModule() {
               whileInView="show"
               viewport={{ once: true, margin: "-100px" }}
             >
-              {content.items.map((facility, index) => (
+              {content.items.map((facility: any, index: number) => (
                 <motion.div 
                   key={index}
                   variants={fadeUp}

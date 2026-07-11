@@ -183,7 +183,7 @@ export function HeroModule() {
           variants={fadeUp}
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
-            {hero.features.map((feature, idx) => (
+            {hero.features.map((feature: any, idx: number) => (
               <div key={idx} className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left group">
                 <div className="w-14 h-14 rounded-[16px] bg-red-50 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[var(--color-primary)] transition-all duration-300">
                   <IconResolver name={feature.iconName} className="w-6 h-6 text-[var(--color-primary)] group-hover:text-white transition-colors duration-300" />

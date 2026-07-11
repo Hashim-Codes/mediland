@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -42,7 +43,7 @@ export function SpecialtiesModule() {
             </motion.p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-              {specialties.items.map((item, index) => (
+              {specialties.items.map((item: any, index: number) => (
                 <motion.div 
                   key={index}
                   variants={fadeUp}
@@ -195,7 +196,7 @@ export function SpecialtiesModule() {
             whileInView="show"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {location.trustCards.map((card, index) => (
+            {location.trustCards.map((card: any, index: number) => (
               <motion.div 
                 key={index}
                 variants={fadeUp}

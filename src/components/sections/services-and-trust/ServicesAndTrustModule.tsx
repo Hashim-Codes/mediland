@@ -86,7 +86,7 @@ export function ServicesAndTrustModule() {
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            {servicesContent.items.map((service, idx) => (
+            {servicesContent.items.map((service: any, idx: number) => (
               <motion.div 
                 key={service.id}
                 variants={fadeUp}
@@ -143,7 +143,7 @@ export function ServicesAndTrustModule() {
             </motion.p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
-              {whyChoose.features.map((feature, idx) => (
+              {whyChoose.features.map((feature: any, idx: number) => (
                 <motion.div key={idx} variants={fadeUp}>
                   <div 
                     className="w-10 h-10 rounded-full flex items-center justify-center mb-4"
@@ -196,7 +196,7 @@ export function ServicesAndTrustModule() {
             variants={slideRight}
           >
             <div className="bg-slate-900 rounded-[24px] p-8 md:p-10 shadow-2xl h-full flex flex-col justify-between gap-10">
-              {stats.slice(0, 4).map((stat, i) => {
+              {stats.slice(0, 4).map((stat: any, i: number) => {
                 const numOnly = parseInt(stat.number.replace(/\D/g, '')) || 0;
                 const suffix = stat.number.replace(/\d/g, '');
                 

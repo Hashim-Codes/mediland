@@ -83,35 +83,23 @@ export function FormEngine({ config }: FormEngineProps) {
         </div>
         <h3 className="text-3xl font-bold text-gray-900 mb-4">{config.successScreen.title}</h3>
         
-        {config.successScreen.message && (
-          <div className="mb-10 text-center space-y-4 px-4">
-            {config.successScreen.message.map((msg, idx) => (
-              <p key={idx} className={`leading-relaxed ${idx === 0 ? 'font-bold text-gray-900 text-xl' : 'text-gray-700 text-lg font-medium'}`}>
-                {msg}
-              </p>
+        <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 mb-8 text-left">
+          <h4 className="font-bold text-gray-900 mb-4">What happens next?</h4>
+          <div className="grid gap-3">
+            {config.successScreen.timeline.map((step, idx) => (
+              <div key={idx} className={`p-4 rounded-xl flex items-center gap-3 ${idx === 0 ? 'bg-green-50 border border-green-100' : 'bg-white border border-gray-200 shadow-sm'}`}>
+                {idx === 0 ? (
+                  <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
+                ) : (
+                  <div className="w-5 h-5 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center shrink-0 font-bold text-[10px]">
+                    {idx}
+                  </div>
+                )}
+                <span className={`font-medium ${idx === 0 ? 'text-green-800' : 'text-gray-700'}`}>{step}</span>
+              </div>
             ))}
           </div>
-        )}
-
-        {config.successScreen.timeline && !config.successScreen.message && (
-          <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 mb-8 text-left">
-            <h4 className="font-bold text-gray-900 mb-4">What happens next?</h4>
-            <div className="grid gap-3">
-              {config.successScreen.timeline.map((step, idx) => (
-                <div key={idx} className={`p-4 rounded-xl flex items-center gap-3 ${idx === 0 ? 'bg-green-50 border border-green-100' : 'bg-white border border-gray-200 shadow-sm'}`}>
-                  {idx === 0 ? (
-                    <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
-                  ) : (
-                    <div className="w-5 h-5 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center shrink-0 font-bold text-[10px]">
-                      {idx}
-                    </div>
-                  )}
-                  <span className={`font-medium ${idx === 0 ? 'text-green-800' : 'text-gray-700'}`}>{step}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        </div>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           {config.successScreen.primaryAction && (

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -114,7 +115,7 @@ export function PremiumFooterModule() {
               whileInView="show"
               viewport={{ once: true, margin: "-100px" }}
             >
-              {footer.gallery.images.map((img, idx) => (
+              {footer.gallery.images.map((img: any, idx: number) => (
                 <motion.div 
                   key={idx} 
                   variants={fadeUp}

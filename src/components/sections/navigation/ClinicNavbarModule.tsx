@@ -88,7 +88,7 @@ export function ClinicNavbarModule() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link, idx) => (
+              {navLinks.map((link: any, idx: number) => (
                 <Link 
                   key={idx} 
                   href={link.href}
@@ -150,7 +150,7 @@ export function ClinicNavbarModule() {
             className="fixed inset-0 z-40 bg-white pt-24 px-4 pb-6 overflow-y-auto"
           >
             <nav className="flex flex-col gap-4">
-              {navLinks.map((link, idx) => (
+              {navLinks.map((link: any, idx: number) => (
                 <Link 
                   key={idx} 
                   href={link.href}
