@@ -274,6 +274,7 @@ export interface TenantConfig {
     whatsapp?: string;
     instagram?: string;
     facebook?: string;
+    youtube?: string;
   };
   openingHours: {
     weekdays: string;

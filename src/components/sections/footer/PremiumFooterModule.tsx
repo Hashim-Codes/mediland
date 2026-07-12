@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Instagram, Facebook, Calendar, Heart, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Facebook, Youtube, Calendar, Heart, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 import { fadeUp, staggerContainer, slideLeft } from '@/lib/animations';
 
@@ -283,6 +283,11 @@ export function PremiumFooterModule() {
                 {config.social.facebook && (
                   <a href={config.social.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all duration-300 group hover:scale-110 shadow-lg">
                     <Facebook className="w-5 h-5" />
+                  </a>
+                )}
+                {config.social.youtube && (
+                  <a href={config.social.youtube} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#FF0000] hover:text-white hover:border-[#FF0000] transition-all duration-300 group hover:scale-110 shadow-lg">
+                    <Youtube className="w-5 h-5" />
                   </a>
                 )}
                 {config.social.instagram && (

@@ -39,6 +39,7 @@ export const siteConfig = {
     whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "+919447229973",
     instagram: "https://www.instagram.com/mediland_clinic_edavanna",
     facebook: "https://www.facebook.com/p/mediland-edavanna-61562019393286/",
+    youtube: "https://www.youtube.com/@medilandmedicalsclinicedav1249",
   },
   openingHours: {
     weekdays: "8:30 AM - 8:30 PM",
