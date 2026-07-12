@@ -131,17 +131,13 @@ export function PremiumFooterModule() {
                 </motion.div>
               ))}
             </motion.div>
-            
           </div>
         </div>
       </div>
 
-      {/* Deep Footer Container */}
-      <div className="bg-slate-900 pt-32 pb-12 relative">
-        
-        {/* Block 3: Final Call-to-Action Banner */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-          <div className="absolute left-1/2 -top-48 -translate-x-1/2 w-[90%] md:w-full max-w-5xl">
+        {/* Block 3: Final Call-to-Action Banner (Moved to sit on white background) */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+          <div className="w-full max-w-5xl mx-auto">
             <motion.div 
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -179,8 +175,10 @@ export function PremiumFooterModule() {
           </div>
         </div>
 
+      {/* Deep Footer Container */}
+      <div className="bg-slate-900 pt-16 pb-12 relative">
         {/* Block 4: Premium Footer (5 Columns) */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-48 lg:mt-32 border-b border-gray-800 pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-gray-800 pb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
             
             {/* Col 1: Branding */}
@@ -253,6 +251,12 @@ export function PremiumFooterModule() {
                   <Phone className="w-5 h-5 mr-3 shrink-0 text-gray-500" />
                   <span>{config.contact.phone}</span>
                 </li>
+                {config.contact.email && (
+                  <li className="flex items-center text-gray-400 text-sm font-light">
+                    <Mail className="w-5 h-5 mr-3 shrink-0 text-gray-500" />
+                    <a href={`mailto:${config.contact.email}`} className="hover:text-white transition-colors">{config.contact.email}</a>
+                  </li>
+                )}
               </ul>
             </div>
 
@@ -260,12 +264,16 @@ export function PremiumFooterModule() {
             <div>
               <h4 className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Follow Us</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 group hover:scale-110 shadow-lg">
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 group hover:scale-110 shadow-lg">
-                  <Instagram className="w-5 h-5" />
-                </a>
+                {config.social.facebook && (
+                  <a href={config.social.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all duration-300 group hover:scale-110 shadow-lg">
+                    <Facebook className="w-5 h-5" />
+                  </a>
+                )}
+                {config.social.instagram && (
+                  <a href={config.social.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#E4405F] hover:text-white hover:border-[#E4405F] transition-all duration-300 group hover:scale-110 shadow-lg">
+                    <Instagram className="w-5 h-5" />
+                  </a>
+                )}
                 {config.social.whatsapp && (
                   <a href={`https://wa.me/${config.social.whatsapp.replace(/[^0-9]/g, '')}`} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-all duration-300 group hover:scale-110 shadow-lg">
                     <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">

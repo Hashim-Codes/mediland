@@ -26,7 +26,7 @@ export const siteConfig = {
   },
   contact: {
     phone: process.env.NEXT_PUBLIC_EMERGENCY_PHONE || "+91 94472 29973",
-    email: "medilandclinic@gmail.com",
+    email: "edavannamediland@gmail.com",
     address: "MEDILAND Clinic, Main Road, Edavanna, Kerala 676541",
     mapUrl: process.env.NEXT_PUBLIC_GOOGLE_MAP || "https://maps.google.com/?q=Edavanna",
   },
@@ -37,6 +37,8 @@ export const siteConfig = {
   },
   social: {
     whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "+919447229973",
+    instagram: "https://www.instagram.com/mediland_clinic_edavanna",
+    facebook: "https://www.facebook.com/p/mediland-edavanna-61562019393286/",
   },
   openingHours: {
     weekdays: "8:30 AM - 8:30 PM",
