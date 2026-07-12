@@ -14,11 +14,12 @@ export const premiumFooter: PremiumFooterContent = {
     label: "INSIDE MEDILAND",
     headingLine1: "Modern Facilities,",
     headingHighlight: "Better Experience",
-    description: "Our clinic combines advanced technology with a patient-friendly environment to ensure comfort and care.",
+    description: "Our clinic combines modern technology with a patient-friendly environment to ensure comfort and care.",
     ctaLabel: "View Our Facilities",
     images: [
       "/mediland/1.png",
       "/mediland/med-building.png",
+      "/mediland/mediland-laboratory.png",
       "/mediland/med-people.png",
       "/mediland/med-pharmacy.png",
       "/mediland/med-res.png"

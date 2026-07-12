@@ -86,18 +86,9 @@ export function ServicesAndTrustModule() {
                   </>
                 )}
 
-                {/* Content Overlay */}
                 <div className="relative z-10 transform transition-transform duration-500 group-hover:-translate-y-2">
                   <h3 className="text-2xl md:text-3xl font-black mb-2 tracking-wide text-white drop-shadow-md">{service.title}</h3>
                   <p className="text-sm md:text-base text-gray-200 font-medium leading-relaxed drop-shadow-sm line-clamp-2 md:line-clamp-none">{service.description}</p>
-                  
-                  <a 
-                    href={service.href || "#appointment"}
-                    className="mt-6 flex items-center gap-2 text-sm font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 text-white"
-                  >
-                    Learn More
-                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
-                  </a>
                 </div>
               </motion.div>
             ))}
@@ -115,19 +106,33 @@ export function ServicesAndTrustModule() {
               <motion.div 
                 key={service.id}
                 variants={fadeUp}
-                className="group relative rounded-[16px] md:rounded-[20px] p-4 md:p-5 shadow-sm hover:shadow-xl border border-gray-100 bg-white hover:-translate-y-1 transition-all duration-500 flex flex-col h-full min-h-[140px] md:min-h-[180px] overflow-hidden"
+                className="group relative rounded-[16px] md:rounded-[20px] p-4 md:p-5 shadow-sm hover:shadow-2xl border border-gray-800 bg-gray-900 hover:-translate-y-1 transition-all duration-500 flex flex-col justify-end h-full min-h-[160px] md:min-h-[200px] overflow-hidden"
               >
+                {/* Background Image */}
+                {service.image && (
+                  <Image 
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out opacity-40 group-hover:opacity-50"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 16vw"
+                  />
+                )}
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-900/60 to-gray-900/10 pointer-events-none" />
+
                 {/* Content */}
                 <div className="relative z-10 flex flex-col h-full">
                   <div 
-                    className="w-10 h-10 md:w-12 md:h-12 rounded-[12px] md:rounded-[14px] flex items-center justify-center mb-auto shrink-0 transition-transform duration-500 group-hover:scale-110 bg-red-50 text-[var(--color-primary)]"
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-[12px] md:rounded-[14px] flex items-center justify-center mb-auto shrink-0 transition-transform duration-500 group-hover:scale-110 bg-white/10 backdrop-blur-sm text-white border border-white/10"
                   >
                     <IconResolver name={service.iconName} className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
                   
-                  <div className="mt-4 transform transition-transform duration-500">
-                    <h3 className="text-sm md:text-base font-bold text-gray-900 mb-1 tracking-wide group-hover:text-[var(--color-primary)] transition-colors line-clamp-1">{service.title}</h3>
-                    <p className="text-[10px] md:text-xs text-gray-500 font-medium leading-relaxed line-clamp-2">{service.description}</p>
+                  <div className="mt-4 transform transition-transform duration-500 group-hover:-translate-y-1">
+                    <h3 className="text-sm md:text-base font-bold text-white mb-1 tracking-wide group-hover:text-primary transition-colors line-clamp-1 drop-shadow-md">{service.title}</h3>
+                    <p className="text-[10px] md:text-xs text-gray-300 font-medium leading-relaxed line-clamp-2 drop-shadow-sm">{service.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -161,28 +166,36 @@ export function ServicesAndTrustModule() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
               {whyChoose.features.map((feature: any, idx: number) => (
-                <motion.div key={idx} variants={fadeUp}>
-                  <div 
-                    className="w-10 h-10 rounded-full flex items-center justify-center mb-4"
-                    style={{ backgroundColor: `${primaryColor}15`, color: primaryColor }}
-                  >
-                    <IconResolver name={feature.iconName} className="w-5 h-5" />
+                <motion.div 
+                  key={idx} 
+                  variants={fadeUp}
+                  className="group relative rounded-[20px] p-6 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col justify-end min-h-[220px]"
+                >
+                  {feature.image && (
+                    <Image 
+                      src={feature.image}
+                      alt={feature.title}
+                      fill
+                      className="object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-70"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      unoptimized
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/20 pointer-events-none" />
+                  
+                  <div className="relative z-10 flex flex-col">
+                    <div 
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 shadow-md bg-white/10 backdrop-blur-md border border-white/20 transition-transform duration-500 group-hover:scale-110 text-white"
+                    >
+                      <IconResolver name={feature.iconName} className="w-6 h-6" />
+                    </div>
+                    <h4 className="text-white font-bold text-lg mb-2 drop-shadow-md">{feature.title}</h4>
+                    <p className="text-sm text-gray-300 font-medium leading-relaxed drop-shadow-sm line-clamp-2">{feature.description}</p>
                   </div>
-                  <h4 className="text-gray-900 font-bold mb-2">{feature.title}</h4>
-                  <p className="text-sm text-gray-600 font-medium leading-relaxed">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
             
-            <motion.a 
-              href="#appointment"
-              variants={fadeUp}
-              className="px-8 py-4 rounded-[14px] font-bold text-lg border-2 transition-all duration-300 inline-flex items-center justify-center gap-2 group hover:shadow-lg mt-4"
-              style={{ borderColor: primaryColor, color: primaryColor } as React.CSSProperties}
-            >
-              {whyChoose.ctaLabel}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.a>
           </motion.div>
 
           {/* Center Column: Image (Col Span 5) */}

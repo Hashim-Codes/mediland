@@ -11,32 +11,38 @@ export const specialties: SpecialtiesSectionContent = {
     {
       iconName: "stethoscope",
       title: "General Medicine",
-      description: "Expert diagnosis and primary healthcare."
+      description: "Expert diagnosis and primary healthcare.",
+      image: "/bg/Medicine doctor.jpg"
     },
     {
       iconName: "baby",
       title: "Pediatrics",
-      description: "Specialized care for children."
+      description: "Specialized care for children.",
+      image: "/bg/child care.jpg"
     },
     {
       iconName: "heart-pulse",
       title: "Cardiac Care",
-      description: "ECG and heart health monitoring."
+      description: "ECG and heart health monitoring.",
+      image: "/bg/ECG.jpg"
     },
     {
       iconName: "pill",
       title: "Pharmacy",
-      description: "Genuine medicines at affordable prices."
+      description: "Genuine medicines at affordable prices.",
+      image: "/bg/pharmacy.jpg"
     },
     {
       iconName: "microscope",
       title: "Diagnostics & Laboratory",
-      description: "Accurate testing and quick results."
+      description: "Accurate testing and quick results.",
+      image: "/mediland/mediland-laboratory.png"
     },
     {
       iconName: "scissors",
       title: "Minor Procedures",
-      description: "Safe outpatient treatments."
+      description: "Safe outpatient treatments.",
+      image: "/bg/Minorprocedures.jpg"
     }
   ]
 };

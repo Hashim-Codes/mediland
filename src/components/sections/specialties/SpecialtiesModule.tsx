@@ -47,21 +47,37 @@ export function SpecialtiesModule() {
                 <motion.div 
                   key={index}
                   variants={fadeUp}
-                  className="bg-white p-5 md:p-6 rounded-[16px] md:rounded-[20px] border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group flex flex-col md:block items-center text-center md:items-start md:text-left"
+                  className="relative bg-gray-900 border border-gray-800 overflow-hidden rounded-[16px] md:rounded-[20px] shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group flex flex-col md:block items-center text-center md:items-start md:text-left min-h-[160px] p-5 md:p-6"
                 >
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gray-50 flex items-center justify-center text-gray-600 mb-3 md:mb-4 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-                    <IconResolver name={item.iconName} className="w-5 h-5 md:w-6 md:h-6" />
+                  {/* Background Image */}
+                  {item.image && (
+                    <Image 
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out opacity-40 group-hover:opacity-50"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  )}
+                  
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent pointer-events-none" />
+
+                  {/* Content */}
+                  <div className="relative z-10 w-full h-full flex flex-col justify-end mt-auto">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-[12px] bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white mb-3 md:mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300 mx-auto md:mx-0">
+                      <IconResolver name={item.iconName} className="w-5 h-5 md:w-6 md:h-6" />
+                    </div>
+                    <div className="transform transition-transform duration-500 group-hover:-translate-y-1">
+                      <h3 className="font-bold text-white mb-1 md:mb-2 drop-shadow-md">{item.title}</h3>
+                      <p className="text-xs md:text-sm text-gray-300 drop-shadow-sm line-clamp-2">{item.description}</p>
+                    </div>
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-1 md:mb-2">{item.title}</h3>
-                  <p className="text-xs md:text-sm text-gray-500">{item.description}</p>
                 </motion.div>
               ))}
             </div>
             
-            <motion.button variants={fadeUp} className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 bg-white border-2 border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300">
-              {specialties.ctaLabel}
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+
           </motion.div>
 
           <motion.div 
@@ -200,13 +216,27 @@ export function SpecialtiesModule() {
               <motion.div 
                 key={index}
                 variants={fadeUp}
-                className="bg-white rounded-[20px] md:rounded-[24px] p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center flex flex-col items-center group"
+                className="group relative bg-white rounded-[20px] md:rounded-[24px] p-6 md:p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 overflow-hidden flex flex-col items-center justify-center text-center min-h-[220px]"
               >
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-primary/5 flex items-center justify-center text-primary mb-4 md:mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                  <IconResolver name={card.iconName} className="w-7 h-7 md:w-8 md:h-8" />
+                {card.image && (
+                  <Image 
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-70"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    unoptimized
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/30 pointer-events-none" />
+                
+                <div className="relative z-10 flex flex-col items-center">
+                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white mb-4 md:mb-6 group-hover:scale-110 transition-all duration-500 shadow-md">
+                    <IconResolver name={card.iconName} className="w-7 h-7 md:w-8 md:h-8" />
+                  </div>
+                  <h4 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 drop-shadow-md">{card.title}</h4>
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed font-light drop-shadow-sm">{card.description}</p>
                 </div>
-                <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{card.title}</h4>
-                <p className="text-sm md:text-base text-gray-500 leading-relaxed font-light">{card.description}</p>
               </motion.div>
             ))}
           </motion.div>

@@ -26,7 +26,7 @@ export const serviceItems: ServiceCardItem[] = [
     id: "ecg",
     iconName: "heart-pulse",
     title: "ECG & Cardiac Care",
-    description: "Heart screening and cardiac health monitoring using advanced equipment.",
+    description: "Heart screening and cardiac health monitoring using modern diagnostic equipment.",
     enabled: true
   },
   {

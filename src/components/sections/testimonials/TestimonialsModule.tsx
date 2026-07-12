@@ -135,7 +135,9 @@ export function TestimonialsModule() {
           </motion.div>
 
           {/* Column 3: Contact CTA */}
-          <motion.div variants={fadeUp} className="bg-white rounded-[24px] p-8 md:p-10 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-center text-center items-center">
+          <motion.div variants={fadeUp} className="bg-white rounded-[24px] p-8 md:p-10 border-2 border-primary shadow-[0_8px_30px_rgb(229,57,53,0.1)] flex flex-col justify-center text-center items-center relative overflow-hidden">
+            {/* Subtle top red glow */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-primary" />
             <h3 className="text-3xl font-bold text-gray-900 mb-4 tracking-tight">We&apos;re Here for You</h3>
             <p className="text-gray-600 mb-8 leading-relaxed">
               Need help or want to book an appointment? Our team is just a call or message away.

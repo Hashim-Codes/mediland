@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
@@ -39,10 +40,6 @@ export function FacilitiesGridModule() {
               {content.description}
             </motion.p>
             
-            <motion.button variants={slideLeft} className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 bg-white border-2 border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1">
-              {content.ctaLabel}
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
           </motion.div>
 
           {/* Right: Facilities Grid */}
@@ -58,13 +55,27 @@ export function FacilitiesGridModule() {
                 <motion.div 
                   key={index}
                   variants={fadeUp}
-                  className={`bg-white rounded-[20px] md:rounded-[24px] p-6 md:p-8 border-2 border-transparent shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:border-primary/20 transition-all duration-300 group hover:-translate-y-2 ${index === 0 ? 'sm:col-span-2' : ''}`}
+                  className={`group relative rounded-[20px] md:rounded-[24px] p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col justify-end min-h-[260px] ${index === 0 ? 'sm:col-span-2' : ''}`}
                 >
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-[14px] md:rounded-2xl bg-gray-50 flex items-center justify-center text-gray-600 mb-4 md:mb-6 group-hover:bg-primary/10 group-hover:text-primary transition-colors duration-300 group-hover:scale-110 shadow-sm">
-                    <IconResolver name={facility.iconName} className="w-6 h-6 md:w-8 md:h-8" />
+                  {facility.image && (
+                    <Image 
+                      src={facility.image}
+                      alt={facility.title}
+                      fill
+                      className="object-cover object-center group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-70"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      unoptimized
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10 pointer-events-none" />
+                  
+                  <div className="relative z-10 flex flex-col">
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white mb-4 md:mb-6 transition-transform duration-500 group-hover:scale-110 shadow-md">
+                      <IconResolver name={facility.iconName} className="w-6 h-6 md:w-7 md:h-7" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3 tracking-tight drop-shadow-md">{facility.title}</h3>
+                    <p className="text-gray-300 leading-relaxed font-light text-sm md:text-base drop-shadow-sm">{facility.description}</p>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3 tracking-tight">{facility.title}</h3>
-                  <p className="text-gray-600 leading-relaxed font-light text-sm md:text-lg">{facility.description}</p>
                 </motion.div>
               ))}
             </motion.div>

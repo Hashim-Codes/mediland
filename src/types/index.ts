@@ -95,6 +95,7 @@ export interface FacilityItem {
   iconName: string;
   title: string;
   description: string;
+  image?: string;
 }
 
 export interface FacilitiesContent {
@@ -131,6 +132,7 @@ export interface TrustFeatureItem {
   iconName: string;
   title: string;
   description: string;
+  image?: string;
 }
 
 export interface WhyChooseContent {
@@ -155,6 +157,7 @@ export interface SpecialtyCardItem {
   iconName: string;
   title: string;
   description: string;
+  image?: string;
 }
 
 export interface SpecialtiesSectionContent {
@@ -175,6 +178,7 @@ export interface LocationSectionContent {
     iconName: string;
     title: string;
     description: string;
+    image?: string;
   }[];
 }
 

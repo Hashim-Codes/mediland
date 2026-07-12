@@ -27,9 +27,11 @@ export function PremiumFooterModule() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
-              className="bg-gray-50 rounded-[32px] p-8 md:p-12 border border-gray-100 flex flex-col justify-center"
+              className="bg-gray-50 rounded-[32px] p-8 md:p-12 border-2 border-primary flex flex-col justify-center shadow-[0_8px_30px_rgb(229,57,53,0.1)] relative overflow-hidden"
             >
-              <div className="w-14 h-14 rounded-full bg-white shadow-sm flex items-center justify-center text-primary mb-6">
+              {/* Subtle top red glow */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-primary" />
+              <div className="relative z-10 w-14 h-14 rounded-full bg-white shadow-sm flex items-center justify-center text-primary mb-6">
                 <Mail className="w-6 h-6" />
               </div>
               <h3 className="text-3xl font-bold text-gray-900 mb-4">{footer.newsletter.heading}</h3>
@@ -143,32 +145,46 @@ export function PremiumFooterModule() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8 }}
-              className="bg-gradient-to-r from-primary to-red-700 rounded-[32px] p-8 md:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8"
+              className="relative overflow-hidden bg-gradient-to-br from-red-600 via-primary to-red-800 rounded-[32px] md:rounded-[40px] p-8 md:p-14 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-10 border border-white/20"
             >
-              <div className="flex items-center gap-6">
-                <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center shrink-0 shadow-inner">
-                  <Heart className="w-10 h-10 text-white fill-white/20" />
+              {/* Glassmorphic Decorative Orbs */}
+              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/4 pointer-events-none" />
+
+              <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6 lg:gap-8">
+                {/* Solid White Icon Box */}
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-[24px] bg-white flex items-center justify-center shrink-0 shadow-[0_8px_32px_rgba(0,0,0,0.1)]">
+                  <Heart className="w-10 h-10 md:w-12 md:h-12 text-primary fill-primary/20 drop-shadow-sm" />
                 </div>
-                <div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
-                    {footer.finalCta.headingLine1} {footer.finalCta.headingLine2}
+                
+                <div className="flex flex-col justify-center">
+                  <h3 className="text-3xl md:text-5xl font-black text-white mb-3 tracking-tight drop-shadow-sm">
+                    {footer.finalCta.headingLine1} <span className="font-light opacity-90">{footer.finalCta.headingLine2}</span>
                   </h3>
-                  <p className="text-white/80 text-lg font-light">
+                  <p className="text-white/80 text-base md:text-lg font-medium tracking-wide max-w-xl leading-relaxed">
                     {footer.finalCta.description}
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row w-full lg:w-auto gap-4 shrink-0">
-                <Link href="#appointment" className="px-8 py-4 rounded-xl bg-white text-primary font-bold hover:bg-gray-50 transition-colors shadow-lg shadow-black/10 flex items-center justify-center group">
-                  <Calendar className="w-5 h-5 mr-2 text-primary" />
-                  {footer.finalCta.primaryCtaLabel}
+              
+              <div className="relative z-10 flex flex-col sm:flex-row w-full lg:w-auto gap-4 md:gap-5 shrink-0">
+                <Link 
+                  href="#appointment" 
+                  className="px-8 py-5 rounded-[20px] md:rounded-full bg-white text-primary font-bold hover:bg-gray-50 transition-all duration-300 shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.3)] hover:-translate-y-1 flex items-center justify-center group"
+                >
+                  <span className="flex items-center gap-3 text-[15px] tracking-[0.1em] uppercase">
+                    <Calendar className="w-5 h-5 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    {footer.finalCta.primaryCtaLabel}
+                  </span>
                 </Link>
                 <a 
                   href={`tel:${config.contact.phone.replace(/[^0-9+]/g, '')}`} 
-                  className="px-8 py-4 rounded-xl bg-transparent border-2 border-white text-white font-bold hover:bg-white/10 transition-colors flex items-center justify-center"
+                  className="px-8 py-5 rounded-[20px] md:rounded-full bg-white text-primary font-bold hover:bg-gray-50 transition-all duration-300 shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.3)] hover:-translate-y-1 flex items-center justify-center group"
                 >
-                  <Phone className="w-5 h-5 mr-2" />
-                  {config.contact.phone}
+                  <span className="flex items-center gap-3 text-[15px] tracking-[0.1em] uppercase">
+                    <Phone className="w-5 h-5 text-primary group-hover:animate-bounce" />
+                    {config.contact.phone}
+                  </span>
                 </a>
               </div>
             </motion.div>

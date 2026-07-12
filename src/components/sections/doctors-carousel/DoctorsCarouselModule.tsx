@@ -42,10 +42,6 @@ export function DoctorsCarouselModule() {
               {content.description}
             </motion.p>
             
-            <motion.a href="#doctors" variants={slideLeft} className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 bg-white border-2 border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1">
-              {content.ctaLabel}
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </motion.a>
           </motion.div>
 
           {/* Right: Carousel */}
