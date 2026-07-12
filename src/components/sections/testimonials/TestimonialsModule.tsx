@@ -63,7 +63,7 @@ export function TestimonialsModule() {
               itemClassName="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_25%]"
               renderItem={(testimonial) => (
                 <div className="h-full px-3 py-4">
-                  <div className="bg-white rounded-[24px] p-8 h-full border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-300 group flex flex-col relative overflow-hidden">
+                  <div className="bg-white rounded-[20px] md:rounded-[24px] p-6 md:p-8 h-full border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-300 group flex flex-col relative overflow-hidden">
                     
                     <div className="absolute -top-4 -right-4 text-gray-50 opacity-50 group-hover:text-primary/5 transition-colors">
                       <Quote size={80} />

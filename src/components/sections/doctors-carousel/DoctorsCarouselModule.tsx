@@ -68,8 +68,10 @@ export function DoctorsCarouselModule() {
                         {doctor.image ? (
                           <Image src={doctor.image} alt={doctor.name} width={80} height={80} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                         ) : (
-                          <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-gray-400">
-                            <span className="text-2xl font-bold">{doctor.name.charAt(4)}</span>
+                          <div className={`w-full h-full flex items-center justify-center ${
+                            ['bg-blue-100 text-blue-600', 'bg-emerald-100 text-emerald-600', 'bg-violet-100 text-violet-600', 'bg-rose-100 text-rose-600', 'bg-amber-100 text-amber-600'][doctor.name.length % 5]
+                          }`}>
+                            <span className="text-2xl font-bold">{doctor.name.replace('Dr. ', '').charAt(0)}</span>
                           </div>
                         )}
                       </div>

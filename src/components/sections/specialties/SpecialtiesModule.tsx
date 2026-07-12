@@ -33,12 +33,12 @@ export function SpecialtiesModule() {
               {specialties.label}
             </motion.div>
             
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight tracking-tight">
+            <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight tracking-tight">
               {specialties.headingLine1} <br/>
               <span className="text-primary">{specialties.headingHighlight}</span>
             </motion.h2>
             
-            <motion.p variants={fadeUp} className="text-lg text-gray-600 mb-10 leading-relaxed font-light">
+            <motion.p variants={fadeUp} className="text-base md:text-lg text-gray-600 mb-8 md:mb-10 leading-relaxed font-light">
               {specialties.description}
             </motion.p>
 
@@ -47,13 +47,13 @@ export function SpecialtiesModule() {
                 <motion.div 
                   key={index}
                   variants={fadeUp}
-                  className="bg-white p-6 rounded-[20px] border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
+                  className="bg-white p-5 md:p-6 rounded-[16px] md:rounded-[20px] border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group flex flex-col md:block items-center text-center md:items-start md:text-left"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center text-gray-600 mb-4 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-                    <IconResolver name={item.iconName} className="w-6 h-6" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gray-50 flex items-center justify-center text-gray-600 mb-3 md:mb-4 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+                    <IconResolver name={item.iconName} className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-500">{item.description}</p>
+                  <h3 className="font-bold text-gray-900 mb-1 md:mb-2">{item.title}</h3>
+                  <p className="text-xs md:text-sm text-gray-500">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -200,13 +200,13 @@ export function SpecialtiesModule() {
               <motion.div 
                 key={index}
                 variants={fadeUp}
-                className="bg-white rounded-[24px] p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center flex flex-col items-center group"
+                className="bg-white rounded-[20px] md:rounded-[24px] p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center flex flex-col items-center group"
               >
-                <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                  <IconResolver name={card.iconName} className="w-8 h-8" />
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-primary/5 flex items-center justify-center text-primary mb-4 md:mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                  <IconResolver name={card.iconName} className="w-7 h-7 md:w-8 md:h-8" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{card.title}</h4>
-                <p className="text-gray-500 leading-relaxed font-light">{card.description}</p>
+                <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{card.title}</h4>
+                <p className="text-sm md:text-base text-gray-500 leading-relaxed font-light">{card.description}</p>
               </motion.div>
             ))}
           </motion.div>

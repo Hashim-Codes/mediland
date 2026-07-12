@@ -11,6 +11,7 @@ import { TestimonialsModule } from '../components/sections/testimonials/Testimon
 import { SpecialtiesModule } from '../components/sections/specialties/SpecialtiesModule';
 import { AppointmentModule } from '../components/sections/appointment/AppointmentModule';
 import { PremiumFooterModule } from '../components/sections/footer/PremiumFooterModule';
+import { ScrollToTop } from '../components/ui/ScrollToTop';
 import { siteConfig } from '../config/site.config';
 
 export default function Home() {
@@ -70,6 +71,9 @@ export default function Home() {
           </svg>
         </a>
       )}
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
     </div>
   );
 }

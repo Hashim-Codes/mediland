@@ -58,13 +58,13 @@ export function FacilitiesGridModule() {
                 <motion.div 
                   key={index}
                   variants={fadeUp}
-                  className={`bg-white rounded-[24px] p-8 border-2 border-transparent shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:border-primary/20 transition-all duration-300 group hover:-translate-y-2 ${index === 0 ? 'sm:col-span-2' : ''}`}
+                  className={`bg-white rounded-[20px] md:rounded-[24px] p-6 md:p-8 border-2 border-transparent shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:border-primary/20 transition-all duration-300 group hover:-translate-y-2 ${index === 0 ? 'sm:col-span-2' : ''}`}
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-600 mb-6 group-hover:bg-primary/10 group-hover:text-primary transition-colors duration-300 group-hover:scale-110 shadow-sm">
-                    <IconResolver name={facility.iconName} className="w-8 h-8" />
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-[14px] md:rounded-2xl bg-gray-50 flex items-center justify-center text-gray-600 mb-4 md:mb-6 group-hover:bg-primary/10 group-hover:text-primary transition-colors duration-300 group-hover:scale-110 shadow-sm">
+                    <IconResolver name={facility.iconName} className="w-6 h-6 md:w-8 md:h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">{facility.title}</h3>
-                  <p className="text-gray-600 leading-relaxed font-light text-lg">{facility.description}</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3 tracking-tight">{facility.title}</h3>
+                  <p className="text-gray-600 leading-relaxed font-light text-sm md:text-lg">{facility.description}</p>
                 </motion.div>
               ))}
             </motion.div>

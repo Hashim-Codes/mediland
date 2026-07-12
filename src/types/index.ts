@@ -71,6 +71,8 @@ export interface ServiceCardItem {
   title: string;
   description: string;
   enabled: boolean;
+  image?: string;
+  href?: string;
 }
 
 export interface ServicesContent {

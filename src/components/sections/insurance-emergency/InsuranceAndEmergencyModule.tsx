@@ -42,26 +42,12 @@ export function InsuranceAndEmergencyModule() {
             </div>
 
             <motion.div 
-              className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6"
-              variants={staggerContainer}
+              className="bg-gray-50 rounded-2xl p-6 border border-gray-100"
+              variants={fadeUp}
             >
-              {insurance.partners.map((partner) => (
-                <motion.div 
-                  key={partner.id}
-                  variants={fadeUp}
-                  className="bg-white rounded-[20px] p-6 border border-gray-100 flex items-center justify-center aspect-[4/3] shadow-sm hover:shadow-[0_12px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 group"
-                >
-                  <div className="relative w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                    <Image 
-                      src={partner.logoUrl} 
-                      alt={partner.name} 
-                      fill 
-                      className="object-contain" 
-                      unoptimized // Because we rely on external or placeholder missing images
-                    />
-                  </div>
-                </motion.div>
-              ))}
+              <p className="text-gray-700 font-medium text-lg">
+                We accept major insurance plans. Contact us to verify coverage.
+              </p>
             </motion.div>
           </motion.div>
 
