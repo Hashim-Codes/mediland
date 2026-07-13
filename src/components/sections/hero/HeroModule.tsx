@@ -33,15 +33,17 @@ export function HeroModule() {
             variants={staggerContainer}
           >
             {/* Trust Badge */}
-            <motion.div 
-              variants={fadeUp} 
-              className="mb-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white shadow-sm border border-gray-100"
-            >
-              <Shield className="w-5 h-5 text-[var(--color-primary)]" />
-              <span className="text-sm font-bold tracking-wide text-gray-800">
-                {hero.trustBadge}
-              </span>
-            </motion.div>
+            {hero.trustBadge && (
+              <motion.div 
+                variants={fadeUp} 
+                className="mb-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white shadow-sm border border-gray-100"
+              >
+                <Shield className="w-5 h-5 text-[var(--color-primary)]" />
+                <span className="text-sm font-bold tracking-wide text-gray-800">
+                  {hero.trustBadge}
+                </span>
+              </motion.div>
+            )}
 
             {/* Main Heading */}
             <motion.h1 

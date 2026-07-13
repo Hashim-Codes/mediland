@@ -1,7 +1,7 @@
 import { HeroContent } from '@/types';
 
 export const hero: HeroContent = {
-  trustBadge: "🏥 Trusted Healthcare Since 2004",
+  trustBadge: "",
   headingLine1: "Trusted Care",
   headingHighlight: "For A Better Life",
   description: "Comprehensive healthcare, pharmacy, diagnostics, and specialist consultation — all under one roof.",
@@ -23,8 +23,8 @@ export const hero: HeroContent = {
   infoBar: {
     opdDays: "Open Now",
     opdTimings: "6:30 AM–8:30 PM",
-    emergencyText: "Emergency 24/7",
-    emergencyContact: "Available"
+    emergencyText: "Day Care Support",
+    emergencyContact: "7:00 AM - 10:00 PM"
   }
 };
 
