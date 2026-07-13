@@ -8,25 +8,25 @@ export const locationContent: LocationSectionContent = {
     {
       iconName: "users",
       title: "Trusted by Thousands",
-      description: "Over 22 years of service and patient trust.",
+      description: "Over 13 years of local service and patient trust.",
       image: "/bg/doctor care.jpg"
     },
     {
       iconName: "user-check",
       title: "Expert Team",
-      description: "Qualified and experienced healthcare professionals.",
+      description: "Qualified and experienced healthcare professionals dedicated to your wellness.",
       image: "/bg/Medicine doctor.jpg"
     },
     {
       iconName: "shield-check",
       title: "Quality Assured",
-      description: "Precision automated equipment and high-quality standards.",
+      description: "Precision diagnostic equipment and high-quality clinical standards.",
       image: "/bg/medical.jpg"
     },
     {
       iconName: "heart",
       title: "Patient First",
-      description: "Comfort, compassion, and satisfaction remain the highest priority.",
+      description: "Comfort, compassion, and your satisfaction remain our highest priority.",
       image: "/bg/child care.jpg"
     }
   ]

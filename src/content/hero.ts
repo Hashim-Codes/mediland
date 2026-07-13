@@ -15,9 +15,9 @@ export const hero: HeroContent = {
     { iconName: "microscope", title: "Laboratory", subtitle: "Accurate Tests" }
   ],
   anniversaryBadge: {
-    years: "22",
-    title: "22 Years",
-    subtitle: "Of Trust",
+    years: "13",
+    title: "13 Years",
+    subtitle: "of Trusted Local Service",
     subtext: "Thousands of Happy Patients"
   },
   infoBar: {

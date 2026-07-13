@@ -6,8 +6,8 @@ export const premiumFooter: PremiumFooterContent = {
     description: "Subscribe for health tips, clinic updates, seasonal awareness campaigns, and special announcements."
   },
   anniversary: {
-    years: "22",
-    message: "Thank you to the Edavanna community for trusting us with your family's health for over two decades.",
+    years: "13",
+    message: "Thank you to the Edavanna community for trusting us with your family's health for over a decade.",
     ctaLabel: "Our Journey"
   },
   gallery: {

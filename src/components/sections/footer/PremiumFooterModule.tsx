@@ -167,10 +167,10 @@ export function PremiumFooterModule() {
                 </div>
               </div>
               
-              <div className="relative z-10 flex flex-col sm:flex-row w-full lg:w-auto gap-4 md:gap-5 shrink-0">
+              <div className="relative z-10 flex flex-col sm:flex-row w-full lg:w-auto gap-4 md:gap-5 shrink-0 flex-wrap justify-center lg:justify-end">
                 <Link 
                   href="#appointment" 
-                  className="px-8 py-5 rounded-[20px] md:rounded-full bg-white text-primary font-bold hover:bg-gray-50 transition-all duration-300 shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.3)] hover:-translate-y-1 flex items-center justify-center group"
+                  className="px-8 py-4 rounded-[20px] md:rounded-full bg-white text-primary font-bold hover:bg-gray-50 transition-all duration-300 shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.3)] hover:-translate-y-1 flex items-center justify-center group"
                 >
                   <span className="flex items-center gap-3 text-[15px] tracking-[0.1em] uppercase">
                     <Calendar className="w-5 h-5 text-primary group-hover:scale-110 transition-transform duration-300" />
@@ -178,12 +178,21 @@ export function PremiumFooterModule() {
                   </span>
                 </Link>
                 <a 
-                  href={`tel:${config.contact.phone.replace(/[^0-9+]/g, '')}`} 
-                  className="px-8 py-5 rounded-[20px] md:rounded-full bg-white text-primary font-bold hover:bg-gray-50 transition-all duration-300 shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.3)] hover:-translate-y-1 flex items-center justify-center group"
+                  href="tel:+917994289210" 
+                  className="px-8 py-4 rounded-[20px] md:rounded-full bg-white text-primary font-bold hover:bg-gray-50 transition-all duration-300 shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.3)] hover:-translate-y-1 flex items-center justify-center group"
                 >
                   <span className="flex items-center gap-3 text-[15px] tracking-[0.1em] uppercase">
                     <Phone className="w-5 h-5 text-primary group-hover:animate-bounce" />
-                    {config.contact.phone}
+                    +91 79942 89210
+                  </span>
+                </a>
+                <a 
+                  href="tel:+919447229973" 
+                  className="px-8 py-4 rounded-[20px] md:rounded-full bg-white text-primary font-bold hover:bg-gray-50 transition-all duration-300 shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.3)] hover:-translate-y-1 flex items-center justify-center group"
+                >
+                  <span className="flex items-center gap-3 text-[15px] tracking-[0.1em] uppercase">
+                    <Phone className="w-5 h-5 text-primary group-hover:animate-bounce" />
+                    +91 94472 29973
                   </span>
                 </a>
               </div>

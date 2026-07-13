@@ -133,13 +133,10 @@ export function SpecialtiesModule() {
               </div>
               <h3 className="text-2xl font-bold text-white mb-6">Working Hours</h3>
               <div className="w-full space-y-4">
-                <div className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/5">
-                  <span className="text-gray-400">Mon–Sat</span>
-                  <span className="text-white font-bold">{openingHours.weekdays}</span>
-                </div>
-                <div className="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/5">
-                  <span className="text-gray-400">Sunday</span>
-                  <span className="text-white font-bold">{openingHours.weekends}</span>
+                <div className="flex flex-col bg-white/5 p-4 rounded-xl border border-white/5">
+                  <span className="text-gray-400">Monday – Sunday</span>
+                  <span className="text-white font-bold text-xl my-1">8:30 AM - 10:00 PM</span>
+                  <span className="text-gray-400 text-sm">(Open daily for extended care)</span>
                 </div>
               </div>
             </div>
@@ -151,18 +148,27 @@ export function SpecialtiesModule() {
               </div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary font-bold text-xs uppercase tracking-wider mb-4 border border-primary/20">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                24/7 Available
+                Day Care Support
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Emergency Care</h3>
-              <p className="text-gray-400 mb-8 font-light">Immediate emergency medical support whenever you need us.</p>
+              <h3 className="text-2xl font-bold text-white mb-3">Day Care Support</h3>
+              <p className="text-gray-400 mb-6 font-light">Immediate medical support for minor emergencies during operational hours.</p>
               
-              <a 
-                href={`tel:${emergency.phone.replace(/[^0-9+]/g, '')}`} 
-                className="w-full flex items-center justify-center py-5 rounded-xl bg-white text-slate-900 font-black text-xl hover:bg-gray-100 transition-colors shadow-xl group"
-              >
-                <Phone className="w-6 h-6 mr-3 group-hover:animate-pulse text-primary" />
-                {emergency.phone}
-              </a>
+              <div className="flex flex-col gap-3 w-full">
+                <a 
+                  href="tel:+917994289210" 
+                  className="w-full flex items-center justify-center py-4 rounded-xl bg-white text-slate-900 font-bold hover:bg-gray-100 transition-colors shadow-xl group"
+                >
+                  <Phone className="w-5 h-5 mr-3 group-hover:animate-pulse text-primary" />
+                  +91 79942 89210
+                </a>
+                <a 
+                  href="tel:+919447229973" 
+                  className="w-full flex items-center justify-center py-4 rounded-xl bg-white text-slate-900 font-bold hover:bg-gray-100 transition-colors shadow-xl group"
+                >
+                  <Phone className="w-5 h-5 mr-3 group-hover:animate-pulse text-primary" />
+                  +91 94472 29973
+                </a>
+              </div>
             </div>
             
           </div>

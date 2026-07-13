@@ -1,7 +1,4 @@
 import { siteConfig } from '@/config/site.config';
-import { AppointmentService } from '@/services/AppointmentService';
-import { MedicineService } from '@/services/MedicineService';
-import { ContactService } from '@/services/ContactService';
 
 export interface FormPayload {
   [key: string]: any;
@@ -29,17 +26,10 @@ export class FormSubmissionService {
     try {
       if (integration === 'whatsapp') {
         return this.submitToWhatsApp(enrichedPayload, formConfig);
-      } else if (integration === 'api') {
-        if (formConfig.id === 'appointment') {
-          await AppointmentService.submit(enrichedPayload);
-        } else if (formConfig.id === 'medicine-order') {
-          await MedicineService.submit(enrichedPayload);
-        } else {
-          await ContactService.submit(enrichedPayload);
-        }
-        return true;
       }
-      throw new Error("Invalid integration type");
+      
+      console.warn("Only WhatsApp integration is supported currently.");
+      return true;
     } catch (error: any) {
       console.error("[FormEngine] Submission failed:", error);
       throw error;

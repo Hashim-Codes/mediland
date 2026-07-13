@@ -32,7 +32,7 @@ export const siteConfig = {
   },
   seo: {
     title: "MEDILAND Clinic Edavanna - Trusted Medical Care",
-    metaDescription: "Experience comprehensive healthcare with expert doctors, genuine medicines, and advanced diagnostics—all under one modern roof.",
+    metaDescription: "Reliable primary healthcare, specialist consultations, and an all-in-one human and veterinary pharmacy — all under one roof.",
     keywords: ["MEDILAND Clinic Edavanna", "Clinic near me", "Doctor in Edavanna", "Medical shop Edavanna", "General Physician Edavanna"],
   },
   social: {
@@ -42,14 +42,14 @@ export const siteConfig = {
     youtube: "https://www.youtube.com/@medilandmedicalsclinicedav1249",
   },
   openingHours: {
-    weekdays: "8:30 AM - 8:30 PM",
-    weekends: "9:00 AM - 1:00 PM",
+    weekdays: "8:30 AM - 10:00 PM",
+    weekends: "8:30 AM - 10:00 PM",
   },
   emergency: {
     enabled: true,
     phone: process.env.NEXT_PUBLIC_EMERGENCY_PHONE || "+91 94472 29973",
-    label: "Emergency Support",
-    supportText: "24/7 Available"
+    label: "Day Care Support",
+    supportText: "Immediate medical support for minor emergencies during operational hours."
   },
   features: {
     doctorAvailability: true,
@@ -61,7 +61,7 @@ export const siteConfig = {
     healthPackages: false,
   },
   trustSignals: {
-    years: 22,
+    years: 13,
     happyPatients: "Thousands",
     reviews: 5.0,
   },
